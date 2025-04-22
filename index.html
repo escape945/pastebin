@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Pastebin</title>
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <h1 class="title">Pastebin</h1>
+      <div class="mdui-chip login">
+        <span class="mdui-chip-icon mdui-color-blue">
+          <i class="mdui-icon material-icons">account_circle</i>
+        </span>
+        <span class="mdui-chip-title">Login</span>
+      </div>
+      &ensp;&ensp;
+      <div class="mdui-chip refresh-page">
+        <span class="mdui-chip-icon mdui-color-blue">
+          <i class="mdui-icon material-icons">refresh</i>
+        </span>
+        <span class="mdui-chip-title">Refresh Page</span>
+      </div>
+      <div class="subscribe-list">
+        <text>列表</text>
+        <ul class="mdui-list"></ul>
+      </div>
+      <div class="subscribe-edit">
+        <text>选中：</text>
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon edit-select-subscribe">
+            <i class="mdui-icon material-icons">edit</i>
+          </span>
+        </div>
+        &ensp;
+        <div class="mdui-chip">
+          <span class="mdui-chip-title select-subscribe"></span>
+        </div>
+        <div class="mdui-textfield subscribe-name">
+          <text>名称</text>
+          <input class="mdui-textfield-input" type="text" readonly />
+        </div>
+        <div class="mdui-textfield subscribe-url">
+          <text>链接</text>
+          <input class="mdui-textfield-input" type="text" readonly />
+        </div>
+        <div class="mdui-textfield subscribe-text">
+          <text>文本</text>
+          <textarea class="mdui-textfield-input" rows="20"></textarea>
+        </div>
+        <div class="confirm-area">
+          <button class="mdui-btn mdui-btn-raised mdui-ripple m3-color delete">删除</button>
+          <button class="mdui-btn mdui-btn-raised mdui-ripple m3-color edit">修改</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="app-login">
+      <div class="close">
+        <i class="mdui-icon material-icons">close</i>
+      </div>
+      <div class="mdui-textfield no-pad-top">
+        <text>验证密钥</text>
+        <input id="subscribe_storage_verification" type="email" style="display: none" value="subscribe_storage" />
+        <input id="subscribe_storage_verification-key" class="mdui-textfield-input" type="password" />
+      </div>
+      <div class="confirm-area">
+        <button class="mdui-btn mdui-btn-raised mdui-ripple m3 logout">退出</button>
+        <button class="mdui-btn mdui-btn-raised mdui-ripple m3-color login">登录</button>
+      </div>
+    </div>
+    <div id="app-login-overlay" class="mdui-overlay mdui-overlay-show"></div>
+  </body>
+
+  <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="script.js"></script>
+</html>

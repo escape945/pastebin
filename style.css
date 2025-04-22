@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  scrollbar-width: thin;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #f3f6fc;
+  overflow: auto;
+}
+
+h1.title {
+  margin: 0 !important;
+}
+
+#app {
+  position: relative;
+  top: 0;
+  --margin: 12px;
+  --padding: 12px;
+  margin: var(--margin) 16px;
+  padding: var(--padding);
+  border-radius: 24px;
+  box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  /* min-height: calc(100% - (var(--margin) + var(--padding)) * 2); */
+}
+
+text {
+  color: #444;
+}
+
+#app .subscribe-text textarea {
+  overflow: auto;
+}
+
+#app .subscribe-list {
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.3);
+}
+#app .subscribe-list ul.mdui-list {
+  color: #111;
+  padding: 4px 0 0;
+}
+#app .subscribe-list li.mdui-list-item {
+  border-radius: 8px;
+}
+
+#app .subscribe-edit {
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.3);
+}
+#app .subscribe-name,
+#app .subscribe-url,
+#app .subscribe-text,
+#app-login .no-pad-top {
+  padding-top: 0;
+}
+
+#app .confirm-area {
+  width: 100%;
+  text-align: right;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+button.m3,
+button.m3-color {
+  border-radius: 48px;
+}
+button.m3-color {
+  background: #0d58d0;
+  color: #fff;
+}
+button.m3-color:hover {
+  background: #0d58d0;
+}
+#app button.m3-color.delete {
+  background: #e03131;
+}
+
+#app-login {
+  position: absolute;
+  --padding: 24px;
+  padding: 0 var(--padding) var(--padding);
+  border-radius: 24px;
+  box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  max-width: calc(100% - (var(--padding) + 4px) * 2);
+  max-height: 100%;
+  overflow: auto;
+  width: 600px;
+  /* height: 400px; */
+  z-index: 6000;
+  transition: all ease 0.2s;
+  display: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+#app-login .close {
+  position: relative;
+  display: block;
+  margin-top: 12px;
+  text-align: right;
+}
+#app-login .close i.mdui-icon {
+  position: relative;
+  right: -12px;
+  cursor: pointer;
+}
+#app-login.show {
+  display: inline-block;
+}
+#app-login.show.ani {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+#app-login ~ #app-login-overlay {
+  z-index: 5100;
+  transition: none;
+  display: none;
+  opacity: 0;
+}
+#app-login.show ~ #app-login-overlay {
+  display: inline-block;
+}
+#app-login.ani ~ #app-login-overlay {
+  opacity: 1;
+}
+
+.mdui-overlay {
+  backdrop-filter: blur(7px);
+}
